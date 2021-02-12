@@ -31,38 +31,81 @@ class ViewController: UIViewController
     
     var winnings = 0
     var playerBet = 0
-    var playerMoney = 0
+    var playerMoney = 1000
+    
+    var stepperPrevValue = 0
+    
+    @IBAction func onResetClick(_ sender: UIButton) {
+        initUI()
+        resetCounters()
+    }
+    
+    func initUI() {
+        lblCreditsLeft.text = "1000"
+        lblCurrentBet.text = "0"
+        lblUserSelectedBet.text = "0"
+        stprUserBet.value = 0.0
+        stprUserBet.maximumValue = 1000.0
+        winnings = 0
+        playerBet = 0
+        playerMoney = 1000
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        lblCreditsLeft.text = "1000"
-        lblCurrentBet.text = "0"
-        lblUserSelectedBet.text = "0"
-        
+        initUI()
     }
     
     @IBAction func onButtonClick(_ sender: UIButton) {
         playerMoney = Int(lblCreditsLeft.text!)!
-        lblCurrentBet.text = String(playerBet)
-        let betLine = spinReels()
-        print(betLine)
-        determineWinnings()
+        if playerMoney > 0 && playerMoney >= playerBet {
+            lblCurrentBet.text = String(playerBet)
+            let betLine = spinReels()
+            changeSlotImages(betLine)
+            determineWinnings()
+        }else{
+            stprUserBet.value = Double(playerMoney)
+            lblUserSelectedBet.text = String(playerMoney)
+            print("Maximum bet amount should be less than or = your credits")
+        }
+    }
+    
+    func changeSlotImages(_ betLine: [String] ) {
+        imgSlot1.image = UIImage(named: betLine[0])
+        imgSlot2.image = UIImage(named: betLine[1])
+        imgSlot3.image = UIImage(named: betLine[2])
     }
     
     @IBAction func onStepperClicked(_ sender: UIStepper) {
         playerBet = Int(sender.value)
-        if playerMoney <= playerBet{
-            lblUserSelectedBet.text = String(playerBet)
+        
+        if stepperPrevValue < playerBet {
+            //print("+")
+            if playerMoney >= playerBet{
+                lblUserSelectedBet.text = String(playerBet)
+            }else{
+                print("No money left to bet")
+                stprUserBet.value = stprUserBet.value - Double(playerBet)
+            }
         }else{
-            print("No money left to bet")
+            //print("-")
+            lblUserSelectedBet.text = String(playerBet)
         }
+        
+        
+        print("playerBet: \(playerBet)")
+        print("playerMoney: \(playerMoney)")
+        
+        stepperPrevValue = playerBet
     }
     
     func determineWinnings() {
+        var isJackpot = false
         if (_pear == 0) {
             if (_grapes == 3) {
                 winnings = playerBet * 10;
+                isJackpot = true
             }
             else if (_bananas == 3) {
                 winnings = playerBet * 20;
@@ -124,6 +167,9 @@ class ViewController: UIViewController
             //            lblResult.text = "Loss!"
             print("Loss!")
         }
+        if isJackpot {
+            print("Yay! You won jackpot!!!")
+        }
         lblCreditsLeft.text = "\(playerMoney)"
         print("Credits: $\(playerMoney)")
         resetCounters()
@@ -139,6 +185,7 @@ class ViewController: UIViewController
         _lemon = 0
         _strawberry = 0
         _pear = 0
+        stprUserBet.maximumValue = Double(playerMoney)
     }
     
     func checkRange(_ value:Int,_ lowerBounds:Int,_ upperBounds:Int) -> Int {
