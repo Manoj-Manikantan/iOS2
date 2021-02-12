@@ -16,33 +16,51 @@ class ViewController: UIViewController
     @IBOutlet weak var imgSlot1: UIImageView!
     @IBOutlet weak var imgSlot2: UIImageView!
     @IBOutlet weak var imgSlot3: UIImageView!
+    @IBOutlet weak var stprUserBet: UIStepper!
+    @IBOutlet weak var lblUserSelectedBet: UILabel!
+    
+    var _apple = 0
+    var _bananas = 0
+    var _cherries = 0
+    var _grapes = 0
+    var _kiwi = 0
+    var _oranges = 0
+    var _lemon = 0
+    var _strawberry = 0
+    var _pear = 0
+    
+    var winnings = 0
+    var playerBet = 0
+    var playerMoney = 0
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        lblCreditsLeft.text = "1000"
+        lblCurrentBet.text = "0"
+        lblUserSelectedBet.text = "0"
+        
     }
     
-    var _grapes = 0
-    var _bananas = 0
-    var _oranges = 0
-    var _cherries = 0
-    var _bars = 0
-    var _bells = 0
-    var _sevens = 0
-    var _blanks = 0
-    var winnings = 0
-    var playerBet = 10
-    var playerMoney = 1000
-    
     @IBAction func onButtonClick(_ sender: UIButton) {
+        playerMoney = Int(lblCreditsLeft.text!)!
+        lblCurrentBet.text = String(playerBet)
         let betLine = spinReels()
         print(betLine)
         determineWinnings()
     }
     
+    @IBAction func onStepperClicked(_ sender: UIStepper) {
+        playerBet = Int(sender.value)
+        if playerMoney <= playerBet{
+            lblUserSelectedBet.text = String(playerBet)
+        }else{
+            print("No money left to bet")
+        }
+    }
+    
     func determineWinnings() {
-        if (_blanks == 0) {
+        if (_pear == 0) {
             if (_grapes == 3) {
                 winnings = playerBet * 10;
             }
@@ -55,14 +73,17 @@ class ViewController: UIViewController
             else if (_cherries == 3) {
                 winnings = playerBet * 40;
             }
-            else if (_bars == 3) {
+            else if (_kiwi == 3) {
                 winnings = playerBet * 50;
             }
-            else if (_bells == 3) {
+            else if (_lemon == 3) {
                 winnings = playerBet * 75;
             }
-            else if (_sevens == 3) {
+            else if (_strawberry == 3) {
                 winnings = playerBet * 100;
+            }
+            else if (_apple == 3) {
+                winnings = playerBet * 150;
             }
             else if (_grapes == 2) {
                 winnings = playerBet * 2;
@@ -76,44 +97,48 @@ class ViewController: UIViewController
             else if (_cherries == 2) {
                 winnings = playerBet * 4;
             }
-            else if (_bars == 2) {
+            else if (_kiwi == 2) {
                 winnings = playerBet * 5;
             }
-            else if (_bells == 2) {
+            else if (_lemon == 2) {
                 winnings = playerBet * 10;
             }
-            else if (_sevens == 2) {
+            else if (_strawberry == 2) {
                 winnings = playerBet * 20;
             }
-            else if (_sevens == 1) {
+            else if (_apple == 2) {
+                winnings = playerBet * 25;
+            }
+            else if (_apple == 1) {
                 winnings = playerBet * 5;
             }
             else {
                 winnings = playerBet * 1;
             }
             playerMoney = playerMoney + winnings
-            lblResult.text = "Win!"
+            //            lblResult.text = "Win!"
             print("Win!")
         }
         else {
             playerMoney = playerMoney - playerBet
-            lblResult.text = "Loss!"
+            //            lblResult.text = "Loss!"
             print("Loss!")
         }
-        lblCredits.text = "Credits: $\(playerMoney)"
+        lblCreditsLeft.text = "\(playerMoney)"
         print("Credits: $\(playerMoney)")
         resetCounters()
     }
     
     func resetCounters() {
+        _apple = 0
         _grapes = 0
         _bananas = 0
         _oranges = 0
         _cherries = 0
-        _bars = 0
-        _bells = 0
-        _sevens = 0
-        _blanks = 0
+        _kiwi = 0
+        _lemon = 0
+        _strawberry = 0
+        _pear = 0
     }
     
     func checkRange(_ value:Int,_ lowerBounds:Int,_ upperBounds:Int) -> Int {
@@ -125,14 +150,14 @@ class ViewController: UIViewController
         var outCome = [0, 0, 0]
         
         for spin in 0..<3 {
-            outCome[spin] = Int(floor(Double((Float.random(in: 0..<1) * 65) + 1)))
+            outCome[spin] = Int(floor(Double((Float.random(in: 0..<1) * 66) + 1)))
             switch outCome[spin] {
             case checkRange(outCome[spin],1,27):
-                betLine[spin] = "Blank"
-                _blanks = _blanks + 1
+                betLine[spin] = "Pear"
+                _pear = _pear + 1
                 break
             case checkRange(outCome[spin],28,37):
-                betLine[spin] = "Grapes"
+                betLine[spin] = "Grape"
                 _grapes = _grapes + 1
                 break
             case checkRange(outCome[spin],38,46):
@@ -148,16 +173,20 @@ class ViewController: UIViewController
                 _cherries = _cherries + 1
                 break
             case checkRange(outCome[spin],60,62):
-                betLine[spin] = "Bar"
-                _bars = _bars + 1
+                betLine[spin] = "Kiwi"
+                _kiwi = _kiwi + 1
                 break
             case checkRange(outCome[spin],63,64):
-                betLine[spin] = "Bell"
-                _bells = _bells + 1
+                betLine[spin] = "Lemon"
+                _lemon = _lemon + 1
                 break
-            case checkRange(outCome[spin],65,65):
-                betLine[spin] = "Seven"
-                _sevens = _sevens + 1
+            case checkRange(outCome[spin],65,66):
+                betLine[spin] = "Strawberry"
+                _strawberry = _strawberry + 1
+                break
+            case checkRange(outCome[spin],66,66):
+                betLine[spin] = "Apple"
+                _apple = _apple + 1
                 break
             default:
                 break
