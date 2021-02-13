@@ -4,6 +4,8 @@
 //  Copyright © 2021 Manoj. All rights reserved.
 
 import UIKit
+import SwiftConfettiView
+import AVFoundation
 
 class ViewController: UIViewController
 {
@@ -16,6 +18,8 @@ class ViewController: UIViewController
     @IBOutlet weak var stprUserBet: UIStepper!
     @IBOutlet weak var lblUserSelectedBet: UILabel!
     @IBOutlet weak var lblResults: UILabel!
+    
+    var confettiView: SwiftConfettiView!
     
     var _apple = 0
     var _bananas = 0
@@ -30,9 +34,9 @@ class ViewController: UIViewController
     var winnings = 0
     var playerBet = 0
     var playerMoney = 1000
-    
     var stepperPrevValue = 0
-    
+    var audioPlayer: AVAudioPlayer?
+
     @IBAction func onQuitClick(_ sender: UIButton) {
         let alert = UIAlertController(title: "Quit App", message: "Are you sure you want to quit the app?", preferredStyle: UIAlertController.Style.alert)
         
@@ -69,10 +73,10 @@ class ViewController: UIViewController
         playerMoney = 1000
     }
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad(){
         super.viewDidLoad()
         initUI()
+        self.confettiView = SwiftConfettiView(frame: self.view.bounds)
     }
     
     @IBAction func onButtonClick(_ sender: UIButton) {
@@ -128,79 +132,77 @@ class ViewController: UIViewController
     
     func determineWinnings() {
         var isJackpot = false
-        if (_pear == 0) {
-            if (_grapes == 3) {
-                winnings = playerBet * 10;
-                isJackpot = true
-            }
-            else if (_bananas == 3) {
-                winnings = playerBet * 20;
-            }
-            else if (_oranges == 3) {
-                winnings = playerBet * 30;
-            }
-            else if (_cherries == 3) {
-                winnings = playerBet * 40;
-            }
-            else if (_kiwi == 3) {
-                winnings = playerBet * 50;
-            }
-            else if (_lemon == 3) {
-                winnings = playerBet * 75;
-            }
-            else if (_strawberry == 3) {
-                winnings = playerBet * 100;
-            }
-            else if (_apple == 3) {
-                winnings = playerBet * 150;
-            }
-            else if (_grapes == 2) {
-                winnings = playerBet * 2;
-            }
-            else if (_bananas == 2) {
-                winnings = playerBet * 2;
-            }
-            else if (_oranges == 2) {
-                winnings = playerBet * 3;
-            }
-            else if (_cherries == 2) {
-                winnings = playerBet * 4;
-            }
-            else if (_kiwi == 2) {
-                winnings = playerBet * 5;
-            }
-            else if (_lemon == 2) {
-                winnings = playerBet * 10;
-            }
-            else if (_strawberry == 2) {
-                winnings = playerBet * 20;
-            }
-            else if (_apple == 2) {
-                winnings = playerBet * 25;
-            }
-            else if (_apple == 1) {
-                winnings = playerBet * 5;
-            }
-            else {
-                winnings = playerBet * 1;
-            }
+        if (_grapes == 3) {
+            winnings = playerBet * 10;
+        } else if (_bananas == 3) {
+            winnings = playerBet * 20;
+        } else if (_oranges == 3) {
+            winnings = playerBet * 30;
+        } else if (_cherries == 3) {
+            winnings = playerBet * 40;
+        } else if (_pear == 3) {
+            winnings = playerBet * 50;
+        } else if (_kiwi == 3) {
+            winnings = playerBet * 60;
+        } else if (_lemon == 3) {
+            winnings = playerBet * 75;
+        } else if (_strawberry == 3) {
+            winnings = playerBet * 100;
+        } else if (_apple == 3) {
+            winnings = playerBet * 150;
+            isJackpot = true
+        } else if (_grapes == 2) {
+            winnings = playerBet * 2;
+        } else if (_pear == 2) {
+            winnings = playerBet * 2;
+        } else if (_bananas == 2) {
+            winnings = playerBet * 2;
+        } else if (_oranges == 2) {
+            winnings = playerBet * 3;
+        } else if (_cherries == 2) {
+            winnings = playerBet * 4;
+        } else if (_kiwi == 2) {
+            winnings = playerBet * 5;
+        } else if (_lemon == 2) {
+            winnings = playerBet * 10;
+        } else if (_strawberry == 2) {
+            winnings = playerBet * 20;
+        } else if (_apple == 2) {
+            winnings = playerBet * 25;
+        } else if (_apple == 1) {
+            winnings = playerBet * 5;
+        } else {
+            winnings = 0;
+        }
+        if winnings > 0 {
             playerMoney = playerMoney + winnings
             lblResults.textColor = UIColor(red: 1.0, green: 0.843, blue: 0.0, alpha: 1.0)
             lblResults.text = "That's a WIN!"
             lblResults.isHidden = false
-        }
-        else {
+            if isJackpot && !self.confettiView.isActive() {
+                lblResults.text = "That's a Jackpot!"
+                runJackpotView()
+            }
+        } else {
             playerMoney = playerMoney - playerBet
             lblResults.textColor = UIColor.white
             lblResults.text = "Not so lucky. Try again."
             lblResults.isHidden = false
         }
-        if isJackpot {
-            print("Yay! You won jackpot!!!")
-        }
         lblCreditsLeft.text = "\(playerMoney)"
-        print("Credits: $\(playerMoney)")
         resetCounters()
+    }
+    
+    func runJackpotView() {
+        self.view.addSubview(self.confettiView)
+        self.confettiView.type = .confetti
+        self.confettiView.startConfetti()
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
+            self.initUI()
+            self.resetCounters()
+            self.confettiView.stopConfetti()
+            self.confettiView.removeFromSuperview()
+        }
     }
     
     func resetCounters() {
