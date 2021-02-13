@@ -1,10 +1,7 @@
-//
 //  ViewController.swift
 //  SlotMachineApp
-//
 //  Created by Manoj on 2021-01-27.
 //  Copyright © 2021 Manoj. All rights reserved.
-
 
 import UIKit
 
@@ -59,15 +56,27 @@ class ViewController: UIViewController
     
     @IBAction func onButtonClick(_ sender: UIButton) {
         playerMoney = Int(lblCreditsLeft.text!)!
-        if playerMoney > 0 && playerMoney >= playerBet {
-            lblCurrentBet.text = String(playerBet)
-            let betLine = spinReels()
-            changeSlotImages(betLine)
-            determineWinnings()
+        playerBet = Int(lblUserSelectedBet.text!)!
+        if playerMoney > 0 && playerMoney >= playerBet{
+            if playerBet > 0 {
+                lblCurrentBet.text = String(playerBet)
+                let betLine = spinReels()
+                changeSlotImages(betLine)
+                determineWinnings()
+                stprUserBet.maximumValue = Double(playerMoney)
+                stprUserBet.value = 0.0
+                lblUserSelectedBet.text = "0"
+                if playerMoney <= 0 {
+                    self.alertMessage(title: "Game over!", message: "Please click the reset button to start again.")
+                }
+            }
+            else {
+                self.alertMessage(title: "Input error", message: "Please place your bet to spin.")
+            }
         }else{
             stprUserBet.value = Double(playerMoney)
             lblUserSelectedBet.text = String(playerMoney)
-            print("Maximum bet amount should be less than or = your credits")
+            self.alertMessage(title: "Zero credits left", message: "Please click the reset button to start again.")
         }
     }
     
@@ -81,7 +90,7 @@ class ViewController: UIViewController
         playerBet = Int(sender.value)
         
         if stepperPrevValue < playerBet {
-            //print("+")
+            // On Increasing
             if playerMoney >= playerBet{
                 lblUserSelectedBet.text = String(playerBet)
             }else{
@@ -89,14 +98,9 @@ class ViewController: UIViewController
                 stprUserBet.value = stprUserBet.value - Double(playerBet)
             }
         }else{
-            //print("-")
+            // On Decreasing
             lblUserSelectedBet.text = String(playerBet)
         }
-        
-        
-        print("playerBet: \(playerBet)")
-        print("playerMoney: \(playerMoney)")
-        
         stepperPrevValue = playerBet
     }
     
@@ -159,12 +163,10 @@ class ViewController: UIViewController
                 winnings = playerBet * 1;
             }
             playerMoney = playerMoney + winnings
-            //            lblResult.text = "Win!"
             print("Win!")
         }
         else {
             playerMoney = playerMoney - playerBet
-            //            lblResult.text = "Loss!"
             print("Loss!")
         }
         if isJackpot {
@@ -240,6 +242,15 @@ class ViewController: UIViewController
             }
         }
         return betLine
+    }
+    
+    func alertMessage(title: String ,message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
+            action in
+            //Do something
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
