@@ -15,6 +15,7 @@ class ViewController: UIViewController
     @IBOutlet weak var imgSlot3: UIImageView!
     @IBOutlet weak var stprUserBet: UIStepper!
     @IBOutlet weak var lblUserSelectedBet: UILabel!
+    @IBOutlet weak var lblResults: UILabel!
     
     var _apple = 0
     var _bananas = 0
@@ -32,12 +33,32 @@ class ViewController: UIViewController
     
     var stepperPrevValue = 0
     
+    @IBAction func onQuitClick(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Quit App", message: "Are you sure you want to quit the app?", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {
+            action in
+            exit(0);
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: {
+            action in
+            // Do nothing
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func onHelpClick(_ sender: UIButton) {
+        self.alertMessage(title: "Help", message: "Rules to be displayed in the next assignment here.")
+    }
+    
     @IBAction func onResetClick(_ sender: UIButton) {
         initUI()
         resetCounters()
     }
     
     func initUI() {
+        lblResults.isHidden = true
         lblCreditsLeft.text = "1000"
         lblCurrentBet.text = "0"
         lblUserSelectedBet.text = "0"
@@ -67,6 +88,7 @@ class ViewController: UIViewController
                 stprUserBet.value = 0.0
                 lblUserSelectedBet.text = "0"
                 if playerMoney <= 0 {
+                    lblResults.isHidden = true
                     self.alertMessage(title: "Game over!", message: "Please click the reset button to start again.")
                 }
             }
@@ -163,11 +185,15 @@ class ViewController: UIViewController
                 winnings = playerBet * 1;
             }
             playerMoney = playerMoney + winnings
-            print("Win!")
+            lblResults.textColor = UIColor(red: 1.0, green: 0.843, blue: 0.0, alpha: 1.0)
+            lblResults.text = "That's a WIN!"
+            lblResults.isHidden = false
         }
         else {
             playerMoney = playerMoney - playerBet
-            print("Loss!")
+            lblResults.textColor = UIColor.white
+            lblResults.text = "Not so lucky. Try again."
+            lblResults.isHidden = false
         }
         if isJackpot {
             print("Yay! You won jackpot!!!")
