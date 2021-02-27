@@ -7,6 +7,8 @@ import UIKit
 import SwiftConfettiView
 import AVFoundation
 import Firebase
+import FirebaseFirestore
+let firebaseDb = Firestore.firestore()
 
 class ViewController: UIViewController
 {
@@ -19,6 +21,7 @@ class ViewController: UIViewController
     @IBOutlet weak var stprUserBet: UIStepper!
     @IBOutlet weak var lblUserSelectedBet: UILabel!
     @IBOutlet weak var lblResults: UILabel!
+    @IBOutlet weak var lblHighestScore: UILabel!
     
     var confettiView: SwiftConfettiView!
     
@@ -37,7 +40,7 @@ class ViewController: UIViewController
     var playerMoney = 1000
     var stepperPrevValue = 0
     var audioPlayer: AVAudioPlayer?
-
+    
     @IBAction func onQuitClick(_ sender: UIButton) {
         let alert = UIAlertController(title: "Quit App", message: "Are you sure you want to quit the app?", preferredStyle: UIAlertController.Style.alert)
         
@@ -53,6 +56,24 @@ class ViewController: UIViewController
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func onPayoutClick(_ sender: UIButton) {
+        
+        var ref: DocumentReference? = nil
+        ref = firebaseDb.collection("payoutRecords").addDocument(data: [
+            "score": (lblCreditsLeft.text! as NSString).integerValue,
+            "date": Date()
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+        initUI()
+        resetCounters()
+        fetchHighScore()
+    }
+    
     @IBAction func onHelpClick(_ sender: UIButton) {
         self.alertMessage(title: "Help", message: "Rules to be displayed in the next assignment here.")
     }
@@ -60,6 +81,7 @@ class ViewController: UIViewController
     @IBAction func onResetClick(_ sender: UIButton) {
         initUI()
         resetCounters()
+        
     }
     
     func initUI() {
@@ -77,7 +99,19 @@ class ViewController: UIViewController
     override func viewDidLoad(){
         super.viewDidLoad()
         initUI()
+        fetchHighScore()
         self.confettiView = SwiftConfettiView(frame: self.view.bounds)
+    }
+    
+    func fetchHighScore(){
+        let scoreRef = firebaseDb.collection("payoutRecords")
+        scoreRef.order(by: "score",descending: true).limit(to: 1).getDocuments { (highScore, error) in
+            if(error == nil && highScore != nil){
+                let latestScore = highScore?.documents[0].data()
+                let latestPayout = latestScore!["score"] as! Int
+                self.lblHighestScore.text = String(latestPayout)
+            }
+        }
     }
     
     @IBAction func onButtonClick(_ sender: UIButton) {

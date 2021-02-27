@@ -261,6 +261,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onPayoutClick:" destination="JPo-pf-Xjc" eventType="touchUpInside" id="xpw-OM-KrW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -318,6 +321,7 @@
                         <outlet property="imgSlot3" destination="Hpy-Qw-xwZ" id="Xpc-mf-9eH"/>
                         <outlet property="lblCreditsLeft" destination="lfP-KG-5Zd" id="yJf-yh-W7R"/>
                         <outlet property="lblCurrentBet" destination="FqE-nN-djt" id="B1U-hQ-Jgt"/>
+                        <outlet property="lblHighestScore" destination="G44-IA-msu" id="Iwd-hL-dKq"/>
                         <outlet property="lblJackpot" destination="POu-ND-uEb" id="6TI-TX-fKg"/>
                         <outlet property="lblResults" destination="tBV-KR-WiY" id="6FD-EZ-heo"/>
                         <outlet property="lblUserSelectedBet" destination="taG-3S-JXr" id="FZi-Ps-z2j"/>
