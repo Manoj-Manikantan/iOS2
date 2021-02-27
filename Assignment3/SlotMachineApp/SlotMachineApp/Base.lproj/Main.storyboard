@@ -370,7 +370,7 @@
                                 <color key="textColor" red="0.2947150496" green="1" blue="0.84075508560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuK-ZL-E9N">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuK-ZL-E9N" userLabel="Game Play View">
                                 <rect key="frame" x="-4" y="104" width="379" height="316"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Player starts with 1000 credits." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQE-2d-1PL">
@@ -412,17 +412,17 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. Jackpot winnings is 1 Million." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofX-EH-ZwW">
-                                        <rect key="frame" x="20" y="185" width="333" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. Jackpot winnings is minimum 1 million and keeps increasing." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofX-EH-ZwW">
+                                        <rect key="frame" x="20" y="185" width="333" height="41"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="S2V-yR-rKM"/>
+                                            <constraint firstAttribute="height" constant="41" id="S2V-yR-rKM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7. Player can reset the game using the reset icon." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYX-fs-iVh">
-                                        <rect key="frame" x="20" y="214" width="333" height="42"/>
+                                        <rect key="frame" x="20" y="227" width="333" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="ieh-4Z-QwS"/>
                                         </constraints>
@@ -431,7 +431,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8. Player can quit the game using the quit icon." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvp-IK-cjc">
-                                        <rect key="frame" x="20" y="254" width="333" height="42"/>
+                                        <rect key="frame" x="20" y="267" width="333" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -441,19 +441,19 @@
                                 <constraints>
                                     <constraint firstItem="ofX-EH-ZwW" firstAttribute="leading" secondItem="sYX-fs-iVh" secondAttribute="leading" id="1ct-86-gtN"/>
                                     <constraint firstItem="9iZ-5g-hsx" firstAttribute="trailing" secondItem="FqM-JP-5F3" secondAttribute="trailing" id="3vu-UW-PXx"/>
-                                    <constraint firstItem="pvp-IK-cjc" firstAttribute="top" secondItem="ofX-EH-ZwW" secondAttribute="bottom" constant="48" id="4bV-1l-cVe"/>
+                                    <constraint firstItem="pvp-IK-cjc" firstAttribute="top" secondItem="ofX-EH-ZwW" secondAttribute="bottom" constant="41" id="4bV-1l-cVe"/>
                                     <constraint firstItem="FQE-2d-1PL" firstAttribute="leading" secondItem="AuK-ZL-E9N" secondAttribute="leading" constant="20" id="4cW-xv-rj4"/>
                                     <constraint firstItem="FQE-2d-1PL" firstAttribute="trailing" secondItem="9iZ-5g-hsx" secondAttribute="trailing" id="6ej-gH-Hfg"/>
                                     <constraint firstItem="sYX-fs-iVh" firstAttribute="trailing" secondItem="pvp-IK-cjc" secondAttribute="trailing" id="Cpu-sr-mJQ"/>
                                     <constraint firstItem="kSp-W3-X0u" firstAttribute="top" secondItem="FqM-JP-5F3" secondAttribute="bottom" constant="39" id="FNm-hY-lpE"/>
                                     <constraint firstItem="kSp-W3-X0u" firstAttribute="leading" secondItem="ofX-EH-ZwW" secondAttribute="leading" id="IG0-if-xsw"/>
                                     <constraint firstItem="FqM-JP-5F3" firstAttribute="trailing" secondItem="aS3-1Y-xlP" secondAttribute="trailing" id="N2a-yS-yA3"/>
-                                    <constraint firstItem="sYX-fs-iVh" firstAttribute="top" secondItem="ofX-EH-ZwW" secondAttribute="bottom" constant="8" id="N8y-Rd-wtf"/>
+                                    <constraint firstItem="sYX-fs-iVh" firstAttribute="top" secondItem="ofX-EH-ZwW" secondAttribute="bottom" constant="1" id="N8y-Rd-wtf"/>
                                     <constraint firstItem="FQE-2d-1PL" firstAttribute="leading" secondItem="9iZ-5g-hsx" secondAttribute="leading" id="NbZ-mr-PgI"/>
                                     <constraint firstItem="FqM-JP-5F3" firstAttribute="top" secondItem="9iZ-5g-hsx" secondAttribute="bottom" id="QEk-vq-kvp"/>
-                                    <constraint firstAttribute="bottom" secondItem="pvp-IK-cjc" secondAttribute="bottom" constant="20" id="RBw-Zg-Wzm"/>
+                                    <constraint firstAttribute="bottom" secondItem="pvp-IK-cjc" secondAttribute="bottom" constant="7" id="RBw-Zg-Wzm"/>
                                     <constraint firstItem="aS3-1Y-xlP" firstAttribute="top" secondItem="FqM-JP-5F3" secondAttribute="bottom" constant="1" id="SxF-N2-8EA"/>
-                                    <constraint firstAttribute="bottom" secondItem="sYX-fs-iVh" secondAttribute="bottom" constant="60" id="Tgs-Iy-XO2"/>
+                                    <constraint firstAttribute="bottom" secondItem="sYX-fs-iVh" secondAttribute="bottom" constant="47" id="Tgs-Iy-XO2"/>
                                     <constraint firstItem="FQE-2d-1PL" firstAttribute="centerX" secondItem="AuK-ZL-E9N" secondAttribute="centerX" constant="-3" id="V12-Jc-kbi"/>
                                     <constraint firstItem="FQE-2d-1PL" firstAttribute="top" secondItem="AuK-ZL-E9N" secondAttribute="top" constant="20" id="Vje-F7-Etl"/>
                                     <constraint firstItem="9iZ-5g-hsx" firstAttribute="top" secondItem="FQE-2d-1PL" secondAttribute="bottom" constant="8" id="cBh-M4-UT0"/>
@@ -468,7 +468,7 @@
                                     <constraint firstItem="ofX-EH-ZwW" firstAttribute="trailing" secondItem="sYX-fs-iVh" secondAttribute="trailing" id="zag-lO-ADc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N23-Vg-ZWL">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N23-Vg-ZWL" userLabel="Winnings View">
                                 <rect key="frame" x="-4" y="485" width="379" height="148"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 3 x Apple = Jackpot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYt-8P-ZOH">
