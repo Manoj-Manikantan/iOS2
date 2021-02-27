@@ -58,6 +58,7 @@
                                                 <state key="normal" backgroundImage="questionmark.circle" catalog="system"/>
                                                 <connections>
                                                     <action selector="onHelpClick:" destination="JPo-pf-Xjc" eventType="touchUpInside" id="Uc6-sk-WiJ"/>
+                                                    <segue destination="diW-wO-jbO" kind="show" id="6Qq-pz-bqd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -285,7 +286,215 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcj-CE-uaj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1380" y="115.27093596059113"/>
+            <point key="canvasLocation" x="-1361" y="-7"/>
+        </scene>
+        <!--HelpViewController-->
+        <scene sceneID="UNG-jy-vpJ">
+            <objects>
+                <viewController title="HelpViewController" id="diW-wO-jbO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O8f-3G-zC6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yx-GH-c2T">
+                                <rect key="frame" x="16" y="12" width="343" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="vWt-u7-XrG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game play - How to Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oge-tw-DPr">
+                                <rect key="frame" x="16" y="68" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="X6o-rh-5tH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Player starts with 1000 credits." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQE-2d-1PL">
+                                <rect key="frame" x="16" y="124" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1C6-Hx-Peg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 3 x Apple = Jackpot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYt-8P-ZOH">
+                                <rect key="frame" x="16" y="505" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="khY-dc-Hac"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. 3 x Any other fruit = Big Payout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyR-pb-6Fo">
+                                <rect key="frame" x="16" y="534" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CO6-Uf-k2k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. 2 x Any fruit = Medium Payout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRY-q1-i4d">
+                                <rect key="frame" x="16" y="563" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gBH-3h-wDX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. 1 x Apple = Small Payout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEp-fX-wL7">
+                                <rect key="frame" x="16" y="592" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="kTn-vP-Kz6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="** No payout for any other combination **" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXa-KE-E5h">
+                                <rect key="frame" x="16" y="650" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Vjr-zT-JQT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Each bet is increased/decreased by 50." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iZ-5g-hsx">
+                                <rect key="frame" x="16" y="153" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lk0-3l-aYW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Game stays alive as long as player credits remain." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aS3-1Y-xlP">
+                                <rect key="frame" x="16" y="222" width="343" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. With a long press of + or - button, player can bet the maximum/minimum amount." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqM-JP-5F3">
+                                <rect key="frame" x="16" y="174" width="343" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="4SP-U1-CZP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. Player gets to view his previous bet." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSp-W3-X0u">
+                                <rect key="frame" x="16" y="260" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="kqE-db-jsM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. Jackpot winnings is 1 Million." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofX-EH-ZwW">
+                                <rect key="frame" x="16" y="289" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="avX-gS-JPr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7. Player can reset the game using the reset icon." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYX-fs-iVh">
+                                <rect key="frame" x="16" y="318" width="343" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="q5j-0c-Cp5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8. Player can quit the game using the quit icon." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvp-IK-cjc">
+                                <rect key="frame" x="16" y="358" width="343" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Combinations &amp; Payout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h94-6Z-gzn">
+                                <rect key="frame" x="16" y="445" width="343" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="IYC-NB-dhc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kSp-W3-X0u" firstAttribute="top" secondItem="aS3-1Y-xlP" secondAttribute="bottom" constant="1" id="082-Gf-UA6"/>
+                            <constraint firstItem="2yx-GH-c2T" firstAttribute="trailing" secondItem="O8f-3G-zC6" secondAttribute="trailingMargin" id="1n4-me-FMv"/>
+                            <constraint firstItem="h94-6Z-gzn" firstAttribute="top" secondItem="pvp-IK-cjc" secondAttribute="bottom" constant="45" id="1q9-nv-gnL"/>
+                            <constraint firstItem="h94-6Z-gzn" firstAttribute="top" secondItem="sYX-fs-iVh" secondAttribute="bottom" constant="85" id="275-qG-YpT"/>
+                            <constraint firstItem="iXa-KE-E5h" firstAttribute="top" secondItem="qEp-fX-wL7" secondAttribute="bottom" constant="37" id="5Qd-tO-m59"/>
+                            <constraint firstItem="9iZ-5g-hsx" firstAttribute="trailing" secondItem="FqM-JP-5F3" secondAttribute="trailing" id="5up-jZ-pmC"/>
+                            <constraint firstItem="aS3-1Y-xlP" firstAttribute="leading" secondItem="kSp-W3-X0u" secondAttribute="leading" id="6cs-Ca-hye"/>
+                            <constraint firstItem="2yx-GH-c2T" firstAttribute="leading" secondItem="oge-tw-DPr" secondAttribute="leading" id="8b5-Zz-7VU"/>
+                            <constraint firstItem="aS3-1Y-xlP" firstAttribute="trailing" secondItem="kSp-W3-X0u" secondAttribute="trailing" id="C5p-yH-BJG"/>
+                            <constraint firstItem="oge-tw-DPr" firstAttribute="top" secondItem="2yx-GH-c2T" secondAttribute="bottom" constant="32" id="D4x-C7-lOT"/>
+                            <constraint firstItem="2yx-GH-c2T" firstAttribute="trailing" secondItem="oge-tw-DPr" secondAttribute="trailing" id="Dm8-5H-lCj"/>
+                            <constraint firstItem="pvp-IK-cjc" firstAttribute="leading" secondItem="h94-6Z-gzn" secondAttribute="leading" id="Ez6-Tq-nPs"/>
+                            <constraint firstItem="9iZ-5g-hsx" firstAttribute="top" secondItem="FQE-2d-1PL" secondAttribute="bottom" constant="8" id="Hbm-Bu-USb"/>
+                            <constraint firstItem="vyR-pb-6Fo" firstAttribute="top" secondItem="bYt-8P-ZOH" secondAttribute="bottom" constant="8" id="JNy-Qt-fTN"/>
+                            <constraint firstItem="vyR-pb-6Fo" firstAttribute="leading" secondItem="yRY-q1-i4d" secondAttribute="leading" id="Jju-As-gmN"/>
+                            <constraint firstItem="oge-tw-DPr" firstAttribute="trailing" secondItem="FQE-2d-1PL" secondAttribute="trailing" id="Kal-Io-lmV"/>
+                            <constraint firstItem="sYX-fs-iVh" firstAttribute="top" secondItem="ofX-EH-ZwW" secondAttribute="bottom" constant="8" id="L3t-Pi-caQ"/>
+                            <constraint firstItem="FqM-JP-5F3" firstAttribute="trailing" secondItem="aS3-1Y-xlP" secondAttribute="trailing" id="O5C-5T-jQd"/>
+                            <constraint firstItem="kSp-W3-X0u" firstAttribute="leading" secondItem="ofX-EH-ZwW" secondAttribute="leading" id="O6g-aQ-W4h"/>
+                            <constraint firstItem="FqM-JP-5F3" firstAttribute="top" secondItem="9iZ-5g-hsx" secondAttribute="bottom" id="Omq-wH-HKF"/>
+                            <constraint firstItem="9iZ-5g-hsx" firstAttribute="leading" secondItem="FqM-JP-5F3" secondAttribute="leading" id="Q9t-fB-IB7"/>
+                            <constraint firstItem="sYX-fs-iVh" firstAttribute="trailing" secondItem="pvp-IK-cjc" secondAttribute="trailing" id="Qrw-FT-FKh"/>
+                            <constraint firstItem="FqM-JP-5F3" firstAttribute="leading" secondItem="aS3-1Y-xlP" secondAttribute="leading" id="RU4-No-BlZ"/>
+                            <constraint firstItem="ofX-EH-ZwW" firstAttribute="top" secondItem="kSp-W3-X0u" secondAttribute="bottom" constant="8" id="TDb-1h-W18"/>
+                            <constraint firstItem="kSp-W3-X0u" firstAttribute="trailing" secondItem="ofX-EH-ZwW" secondAttribute="trailing" id="X7k-Sn-x2D"/>
+                            <constraint firstItem="yRY-q1-i4d" firstAttribute="trailing" secondItem="qEp-fX-wL7" secondAttribute="trailing" id="Yyv-89-syX"/>
+                            <constraint firstItem="yRY-q1-i4d" firstAttribute="leading" secondItem="qEp-fX-wL7" secondAttribute="leading" id="ZLL-ci-gIH"/>
+                            <constraint firstItem="pvp-IK-cjc" firstAttribute="trailing" secondItem="h94-6Z-gzn" secondAttribute="trailing" id="ZLn-CJ-ebE"/>
+                            <constraint firstItem="FQE-2d-1PL" firstAttribute="trailing" secondItem="9iZ-5g-hsx" secondAttribute="trailing" id="aFq-my-DLX"/>
+                            <constraint firstItem="sYX-fs-iVh" firstAttribute="leading" secondItem="pvp-IK-cjc" secondAttribute="leading" id="adN-j0-K8l"/>
+                            <constraint firstItem="vyR-pb-6Fo" firstAttribute="trailing" secondItem="yRY-q1-i4d" secondAttribute="trailing" id="axh-PD-iLa"/>
+                            <constraint firstItem="ofX-EH-ZwW" firstAttribute="leading" secondItem="sYX-fs-iVh" secondAttribute="leading" id="bPN-KV-wqN"/>
+                            <constraint firstItem="pvp-IK-cjc" firstAttribute="top" secondItem="ofX-EH-ZwW" secondAttribute="bottom" constant="48" id="bUl-Lk-zKa"/>
+                            <constraint firstItem="FQE-2d-1PL" firstAttribute="top" secondItem="oge-tw-DPr" secondAttribute="bottom" constant="35" id="c7X-l0-faK"/>
+                            <constraint firstItem="FQE-2d-1PL" firstAttribute="leading" secondItem="9iZ-5g-hsx" secondAttribute="leading" id="dhO-I3-2eY"/>
+                            <constraint firstItem="qEp-fX-wL7" firstAttribute="leading" secondItem="iXa-KE-E5h" secondAttribute="leading" id="ekf-om-3dg"/>
+                            <constraint firstItem="oge-tw-DPr" firstAttribute="leading" secondItem="FQE-2d-1PL" secondAttribute="leading" id="fhH-Cz-NHd"/>
+                            <constraint firstItem="aS3-1Y-xlP" firstAttribute="top" secondItem="FqM-JP-5F3" secondAttribute="bottom" constant="1" id="g04-z6-pbt"/>
+                            <constraint firstItem="ofX-EH-ZwW" firstAttribute="trailing" secondItem="sYX-fs-iVh" secondAttribute="trailing" id="gcE-DZ-t0a"/>
+                            <constraint firstItem="bYt-8P-ZOH" firstAttribute="top" secondItem="h94-6Z-gzn" secondAttribute="bottom" constant="36" id="j48-np-enT"/>
+                            <constraint firstItem="cLM-3D-fcM" firstAttribute="bottom" secondItem="iXa-KE-E5h" secondAttribute="bottom" constant="53" id="kIb-Sc-bsE"/>
+                            <constraint firstItem="h94-6Z-gzn" firstAttribute="trailing" secondItem="bYt-8P-ZOH" secondAttribute="trailing" id="kay-cU-ObW"/>
+                            <constraint firstItem="h94-6Z-gzn" firstAttribute="leading" secondItem="bYt-8P-ZOH" secondAttribute="leading" id="kfZ-GU-jQi"/>
+                            <constraint firstItem="qEp-fX-wL7" firstAttribute="trailing" secondItem="iXa-KE-E5h" secondAttribute="trailing" id="ly6-ac-rxq"/>
+                            <constraint firstItem="bYt-8P-ZOH" firstAttribute="leading" secondItem="vyR-pb-6Fo" secondAttribute="leading" id="mqj-OW-GWP"/>
+                            <constraint firstItem="bYt-8P-ZOH" firstAttribute="trailing" secondItem="vyR-pb-6Fo" secondAttribute="trailing" id="p7D-Ip-fRn"/>
+                            <constraint firstItem="yRY-q1-i4d" firstAttribute="top" secondItem="vyR-pb-6Fo" secondAttribute="bottom" constant="8" id="ufE-zE-dvD"/>
+                            <constraint firstItem="2yx-GH-c2T" firstAttribute="top" secondItem="cLM-3D-fcM" secondAttribute="top" constant="12" id="usV-k7-ckK"/>
+                            <constraint firstItem="2yx-GH-c2T" firstAttribute="leading" secondItem="O8f-3G-zC6" secondAttribute="leadingMargin" id="wqa-u1-5C4"/>
+                            <constraint firstItem="qEp-fX-wL7" firstAttribute="top" secondItem="yRY-q1-i4d" secondAttribute="bottom" constant="8" id="zCb-eU-oYz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cLM-3D-fcM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dIC-o3-Rqa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6E-up-sUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-578.39999999999998" y="-7.389162561576355"/>
         </scene>
     </scenes>
     <resources>
