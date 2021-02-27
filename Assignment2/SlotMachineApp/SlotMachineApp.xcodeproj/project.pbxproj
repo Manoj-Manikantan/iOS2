@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0556C72625D860D8007EFEDC /* jackpot_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0556C72525D860D8007EFEDC /* jackpot_sound.mp3 */; };
+		3381E317DB23946D125B0204 /* Pods_SlotMachineApp_SlotMachineAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E020A73BD3E06CF68898FE /* Pods_SlotMachineApp_SlotMachineAppUITests.framework */; };
+		94FAB9175C92AC25093F8569 /* Pods_SlotMachineAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67AA48D5241905E684798B0 /* Pods_SlotMachineAppTests.framework */; };
 		AFFDD4D625C1AFD000661BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFDD4D525C1AFD000661BAC /* AppDelegate.swift */; };
 		AFFDD4D825C1AFD000661BAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFDD4D725C1AFD000661BAC /* SceneDelegate.swift */; };
 		AFFDD4DA25C1AFD000661BAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFDD4D925C1AFD000661BAC /* ViewController.swift */; };
@@ -16,6 +19,7 @@
 		AFFDD4E525C1AFD300661BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFDD4E325C1AFD300661BAC /* LaunchScreen.storyboard */; };
 		AFFDD4F025C1AFD300661BAC /* SlotMachineAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFDD4EF25C1AFD300661BAC /* SlotMachineAppTests.swift */; };
 		AFFDD4FB25C1AFD300661BAC /* SlotMachineAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFDD4FA25C1AFD300661BAC /* SlotMachineAppUITests.swift */; };
+		FE6E4A3C403B429E5B76943E /* Pods_SlotMachineApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADB6C59F99282EF87EE937E /* Pods_SlotMachineApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0556C72525D860D8007EFEDC /* jackpot_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jackpot_sound.mp3; sourceTree = "<group>"; };
+		164507CCC18B03D314304756 /* Pods-SlotMachineApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlotMachineApp.debug.xcconfig"; path = "Target Support Files/Pods-SlotMachineApp/Pods-SlotMachineApp.debug.xcconfig"; sourceTree = "<group>"; };
+		20E020A73BD3E06CF68898FE /* Pods_SlotMachineApp_SlotMachineAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlotMachineApp_SlotMachineAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EC40C56AC9ECFCB4470D37C /* Pods-SlotMachineApp-SlotMachineAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlotMachineApp-SlotMachineAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SlotMachineApp-SlotMachineAppUITests/Pods-SlotMachineApp-SlotMachineAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		53FE98AFE89078CD3AEA41D6 /* Pods-SlotMachineApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlotMachineApp.release.xcconfig"; path = "Target Support Files/Pods-SlotMachineApp/Pods-SlotMachineApp.release.xcconfig"; sourceTree = "<group>"; };
+		7A4280578705A96B0317C8EA /* Pods-SlotMachineAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlotMachineAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SlotMachineAppTests/Pods-SlotMachineAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8DA30654833A1AB24061228D /* Pods-SlotMachineApp-SlotMachineAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlotMachineApp-SlotMachineAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SlotMachineApp-SlotMachineAppUITests/Pods-SlotMachineApp-SlotMachineAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFDD4D225C1AFD000661BAC /* SlotMachineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFDD4D525C1AFD000661BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFFDD4D725C1AFD000661BAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +62,9 @@
 		AFFDD4F625C1AFD300661BAC /* SlotMachineAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlotMachineAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFDD4FA25C1AFD300661BAC /* SlotMachineAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineAppUITests.swift; sourceTree = "<group>"; };
 		AFFDD4FC25C1AFD300661BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C26178350DD97E2799AF3C /* Pods-SlotMachineAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlotMachineAppTests.release.xcconfig"; path = "Target Support Files/Pods-SlotMachineAppTests/Pods-SlotMachineAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		EADB6C59F99282EF87EE937E /* Pods_SlotMachineApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlotMachineApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67AA48D5241905E684798B0 /* Pods_SlotMachineAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlotMachineAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE6E4A3C403B429E5B76943E /* Pods_SlotMachineApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94FAB9175C92AC25093F8569 /* Pods_SlotMachineAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +88,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3381E317DB23946D125B0204 /* Pods_SlotMachineApp_SlotMachineAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0556C72425D860C5007EFEDC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				0556C72525D860D8007EFEDC /* jackpot_sound.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		41E04C6AF2086A2554932689 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EADB6C59F99282EF87EE937E /* Pods_SlotMachineApp.framework */,
+				20E020A73BD3E06CF68898FE /* Pods_SlotMachineApp_SlotMachineAppUITests.framework */,
+				F67AA48D5241905E684798B0 /* Pods_SlotMachineAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BCA7F36856BD3D4F1D3B1CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				164507CCC18B03D314304756 /* Pods-SlotMachineApp.debug.xcconfig */,
+				53FE98AFE89078CD3AEA41D6 /* Pods-SlotMachineApp.release.xcconfig */,
+				8DA30654833A1AB24061228D /* Pods-SlotMachineApp-SlotMachineAppUITests.debug.xcconfig */,
+				3EC40C56AC9ECFCB4470D37C /* Pods-SlotMachineApp-SlotMachineAppUITests.release.xcconfig */,
+				7A4280578705A96B0317C8EA /* Pods-SlotMachineAppTests.debug.xcconfig */,
+				B9C26178350DD97E2799AF3C /* Pods-SlotMachineAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AFFDD4C925C1AFD000661BAC = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +133,8 @@
 				AFFDD4EE25C1AFD300661BAC /* SlotMachineAppTests */,
 				AFFDD4F925C1AFD300661BAC /* SlotMachineAppUITests */,
 				AFFDD4D325C1AFD000661BAC /* Products */,
+				4BCA7F36856BD3D4F1D3B1CA /* Pods */,
+				41E04C6AF2086A2554932689 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +151,7 @@
 		AFFDD4D425C1AFD000661BAC /* SlotMachineApp */ = {
 			isa = PBXGroup;
 			children = (
+				0556C72425D860C5007EFEDC /* Sounds */,
 				AFFDD4D525C1AFD000661BAC /* AppDelegate.swift */,
 				AFFDD4D725C1AFD000661BAC /* SceneDelegate.swift */,
 				AFFDD4D925C1AFD000661BAC /* ViewController.swift */,
@@ -138,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFFDD4FF25C1AFD300661BAC /* Build configuration list for PBXNativeTarget "SlotMachineApp" */;
 			buildPhases = (
+				4F600FE2AEBC72201A037347 /* [CP] Check Pods Manifest.lock */,
 				AFFDD4CE25C1AFD000661BAC /* Sources */,
 				AFFDD4CF25C1AFD000661BAC /* Frameworks */,
 				AFFDD4D025C1AFD000661BAC /* Resources */,
+				4ADDE8419167CA473EF9A675 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFFDD50225C1AFD300661BAC /* Build configuration list for PBXNativeTarget "SlotMachineAppTests" */;
 			buildPhases = (
+				DB4D170A0085364170EF0DA6 /* [CP] Check Pods Manifest.lock */,
 				AFFDD4E725C1AFD300661BAC /* Sources */,
 				AFFDD4E825C1AFD300661BAC /* Frameworks */,
 				AFFDD4E925C1AFD300661BAC /* Resources */,
@@ -173,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFFDD50525C1AFD300661BAC /* Build configuration list for PBXNativeTarget "SlotMachineAppUITests" */;
 			buildPhases = (
+				ED29F0AC6ED5972314780049 /* [CP] Check Pods Manifest.lock */,
 				AFFDD4F225C1AFD300661BAC /* Sources */,
 				AFFDD4F325C1AFD300661BAC /* Frameworks */,
 				AFFDD4F425C1AFD300661BAC /* Resources */,
+				2122C266ACD7EF62C928308C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +294,7 @@
 				AFFDD4E525C1AFD300661BAC /* LaunchScreen.storyboard in Resources */,
 				AFFDD4E225C1AFD300661BAC /* Assets.xcassets in Resources */,
 				AFFDD4DD25C1AFD000661BAC /* Main.storyboard in Resources */,
+				0556C72625D860D8007EFEDC /* jackpot_sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +313,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2122C266ACD7EF62C928308C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SlotMachineApp-SlotMachineAppUITests/Pods-SlotMachineApp-SlotMachineAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SlotMachineApp-SlotMachineAppUITests/Pods-SlotMachineApp-SlotMachineAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlotMachineApp-SlotMachineAppUITests/Pods-SlotMachineApp-SlotMachineAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4ADDE8419167CA473EF9A675 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SlotMachineApp/Pods-SlotMachineApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SlotMachineApp/Pods-SlotMachineApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlotMachineApp/Pods-SlotMachineApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F600FE2AEBC72201A037347 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlotMachineApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB4D170A0085364170EF0DA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlotMachineAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED29F0AC6ED5972314780049 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlotMachineApp-SlotMachineAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFFDD4CE25C1AFD000661BAC /* Sources */ = {
@@ -436,6 +596,7 @@
 		};
 		AFFDD50025C1AFD300661BAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 164507CCC18B03D314304756 /* Pods-SlotMachineApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +615,7 @@
 		};
 		AFFDD50125C1AFD300661BAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53FE98AFE89078CD3AEA41D6 /* Pods-SlotMachineApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -472,6 +634,7 @@
 		};
 		AFFDD50325C1AFD300661BAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A4280578705A96B0317C8EA /* Pods-SlotMachineAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +657,7 @@
 		};
 		AFFDD50425C1AFD300661BAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C26178350DD97E2799AF3C /* Pods-SlotMachineAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +680,7 @@
 		};
 		AFFDD50625C1AFD300661BAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DA30654833A1AB24061228D /* Pods-SlotMachineApp-SlotMachineAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +701,7 @@
 		};
 		AFFDD50725C1AFD300661BAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EC40C56AC9ECFCB4470D37C /* Pods-SlotMachineApp-SlotMachineAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
