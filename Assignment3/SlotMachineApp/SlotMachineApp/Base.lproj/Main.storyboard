@@ -218,7 +218,7 @@
                                 <color key="textColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highest Payout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAk-fe-2bF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highest Payout" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAk-fe-2bF">
                                 <rect key="frame" x="16" y="188.33333333333334" width="163" height="21.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="163" id="Mlw-YT-4tb"/>
@@ -323,6 +323,7 @@
                         <outlet property="lblCurrentBet" destination="FqE-nN-djt" id="B1U-hQ-Jgt"/>
                         <outlet property="lblHighestScore" destination="G44-IA-msu" id="Iwd-hL-dKq"/>
                         <outlet property="lblJackpot" destination="POu-ND-uEb" id="6TI-TX-fKg"/>
+                        <outlet property="lblJackpotAmount" destination="POu-ND-uEb" id="RHR-6g-vAo"/>
                         <outlet property="lblResults" destination="tBV-KR-WiY" id="6FD-EZ-heo"/>
                         <outlet property="lblUserSelectedBet" destination="taG-3S-JXr" id="FZi-Ps-z2j"/>
                         <outlet property="stprUserBet" destination="tR6-sJ-Zf9" id="yfa-Ef-AIV"/>

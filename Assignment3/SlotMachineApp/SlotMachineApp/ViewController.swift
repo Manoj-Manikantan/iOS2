@@ -22,6 +22,7 @@ class ViewController: UIViewController
     @IBOutlet weak var lblUserSelectedBet: UILabel!
     @IBOutlet weak var lblResults: UILabel!
     @IBOutlet weak var lblHighestScore: UILabel!
+    @IBOutlet weak var lblJackpotAmount: UILabel!
     
     var confettiView: SwiftConfettiView!
     
@@ -38,6 +39,7 @@ class ViewController: UIViewController
     var winnings = 0
     var playerBet = 0
     var playerMoney = 1000
+    var currentJackpotAmount = 0
     var stepperPrevValue = 0
     var audioPlayer: AVAudioPlayer?
     
@@ -71,7 +73,6 @@ class ViewController: UIViewController
         }
         initUI()
         resetCounters()
-        fetchHighScore()
     }
     
     @IBAction func onHelpClick(_ sender: UIButton) {
@@ -100,16 +101,51 @@ class ViewController: UIViewController
         super.viewDidLoad()
         initUI()
         fetchHighScore()
+        fetchJackpot()
         self.confettiView = SwiftConfettiView(frame: self.view.bounds)
+    }
+    
+    func fetchJackpot(){
+        firebaseDb.collection("jackpotAmount").document("Uj8ihVz76GJ1pn0dNLdS").addSnapshotListener { (documentSnapShot, error) in
+            guard let document = documentSnapShot else {
+                print("Error")
+                return
+            }
+            guard let data = document.data() else {
+                print("Error")
+                return
+            }
+            let latestJackpot = data["JackpotVal"] as! Int
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let formattedJackpotNumber = numberFormatter.string(from: NSNumber(value:latestJackpot))
+            self.currentJackpotAmount = latestJackpot
+            
+            self.lblJackpotAmount.text = formattedJackpotNumber
+            print("Jackpot amount")
+            print(String(formattedJackpotNumber!))
+            print("Jackpot: \(data["JackpotVal"] ?? "1000000")")
+        }
     }
     
     func fetchHighScore(){
         let scoreRef = firebaseDb.collection("payoutRecords")
-        scoreRef.order(by: "score",descending: true).limit(to: 1).getDocuments { (highScore, error) in
-            if(error == nil && highScore != nil){
-                let latestScore = highScore?.documents[0].data()
-                let latestPayout = latestScore!["score"] as! Int
-                self.lblHighestScore.text = String(latestPayout)
+        scoreRef.order(by: "score",descending: true).limit(to: 1).addSnapshotListener { (highScore, error) in
+            if(error == nil && highScore != nil) {
+                if  (highScore?.documents.count)! > 0 {
+                    let latestScore = highScore?.documents[0].data()
+                    let latestPayout = latestScore!["score"] as! Int
+                    let numberFormatter = NumberFormatter()
+                    numberFormatter.numberStyle = .decimal
+                    let formattedHighScoreNumber = numberFormatter.string(from: NSNumber(value:latestPayout))
+                    self.lblHighestScore.text = formattedHighScoreNumber
+                    print("HighScore")
+                    print(String(formattedHighScoreNumber!))
+                } else {
+                    self.lblHighestScore.text = "0"
+                }
+            } else {
+                self.lblHighestScore.text = "0"
             }
         }
     }
@@ -223,9 +259,15 @@ class ViewController: UIViewController
             lblResults.textColor = UIColor.white
             lblResults.text = "Not so lucky. Try again."
             lblResults.isHidden = false
+            currentJackpotAmount += playerBet
+            updateCurrentJackpot()
         }
         lblCreditsLeft.text = "\(playerMoney)"
         resetCounters()
+    }
+    
+    func updateCurrentJackpot(){
+        firebaseDb.collection("jackpotAmount").document("Uj8ihVz76GJ1pn0dNLdS").setData(["JackpotVal": currentJackpotAmount])
     }
     
     func runJackpotView() {
