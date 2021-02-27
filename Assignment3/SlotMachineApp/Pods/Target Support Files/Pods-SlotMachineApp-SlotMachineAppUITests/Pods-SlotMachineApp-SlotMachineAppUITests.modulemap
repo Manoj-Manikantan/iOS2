@@ -1,0 +1,6 @@
+framework module Pods_SlotMachineApp_SlotMachineAppUITests {
+  umbrella header "Pods-SlotMachineApp-SlotMachineAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
