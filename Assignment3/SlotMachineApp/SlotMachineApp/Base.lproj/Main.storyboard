@@ -337,7 +337,6 @@
         <!--HelpViewController-->
         <scene sceneID="UNG-jy-vpJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d6E-up-sUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="HelpViewController" id="diW-wO-jbO" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O8f-3G-zC6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
@@ -546,6 +545,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dIC-o3-Rqa"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6E-up-sUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-578.39999999999998" y="-7.389162561576355"/>
         </scene>
