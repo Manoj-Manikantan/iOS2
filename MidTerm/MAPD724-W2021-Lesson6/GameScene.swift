@@ -25,7 +25,7 @@ class GameScene: SKScene
         
         // add ocean to the scene
         ocean = Ocean() // allocate memory
-        ocean?.position = CGPoint(x: 265, y: 0)
+        ocean?.position = CGPoint(x: 226, y: 0)
         addChild(ocean!) // add object to the scene
         
         // add island to the scene
@@ -45,22 +45,22 @@ class GameScene: SKScene
             addChild(clouds[index])
         }
         
-        let engineSound = SKAudioNode(fileNamed: "engine.mp3")
-        self.addChild(engineSound)
-        engineSound.autoplayLooped = true
-
-        // preload sounds
-        do {
-            let sounds:[String] = ["thunder", "yay"]
-            for sound in sounds
-            {
-                let path: String = Bundle.main.path(forResource: sound, ofType: "mp3")!
-                let url: URL = URL(fileURLWithPath: path)
-	                let player: AVAudioPlayer = try AVAudioPlayer(contentsOf: url)
-                player.prepareToPlay()
-            }
-        } catch {
-        }
+//        let engineSound = SKAudioNode(fileNamed: "engine.mp3")
+//        self.addChild(engineSound)
+//        engineSound.autoplayLooped = true
+//
+//        // preload sounds
+//        do {
+//            let sounds:[String] = ["thunder", "yay"]
+//            for sound in sounds
+//            {
+//                let path: String = Bundle.main.path(forResource: sound, ofType: "mp3")!
+//                let url: URL = URL(fileURLWithPath: path)
+//	                let player: AVAudioPlayer = try AVAudioPlayer(contentsOf: url)
+//                player.prepareToPlay()
+//            }
+//        } catch {
+//        }
         
     }
     

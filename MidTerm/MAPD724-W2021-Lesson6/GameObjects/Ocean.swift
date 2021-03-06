@@ -19,15 +19,15 @@ class Ocean: GameObject
     
     override func CheckBounds()
     {
-        if(position.x <= -265)
+        if(position.x <= -226)
         {
             Reset()
-        }
+        }   
     }
     
     override func Reset()
     {
-        position.x = 265
+        position.x = 226
     }
     
     // initialization

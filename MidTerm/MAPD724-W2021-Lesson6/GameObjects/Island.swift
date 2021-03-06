@@ -19,18 +19,18 @@ class Island: GameObject
     
     override func CheckBounds()
     {
-        if(position.y <= -730)
+        if(position.x <= -220)
         {
             Reset()
         }
     }
     
     override func Reset()
-    {
-        position.y = 730
-        // get a pseudo-random number from -313 to 313 =
-        let randomX:Int = (randomSource?.nextInt(upperBound: 626))! - 313
-        position.x = CGFloat(randomX)
+    { 
+        position.x = 220
+        // get a pseudo-random number from -220 to 220 =
+        let randomY:Int = (randomSource?.nextInt(upperBound: 440))! - 220
+        position.y = CGFloat(randomY)
         isColliding = false
     }
     
@@ -39,7 +39,7 @@ class Island: GameObject
     {
         zPosition = 1
         Reset()
-        dy = 5.0
+        dx = 4.0
     }
     
     override func Update()
@@ -50,6 +50,6 @@ class Island: GameObject
     
     func Move()
     {
-        position.y -= dy!
+        position.x -= dx!
     }
 }
