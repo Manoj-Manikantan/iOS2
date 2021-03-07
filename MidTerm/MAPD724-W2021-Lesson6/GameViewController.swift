@@ -1,3 +1,13 @@
+/**
+File Name : GameViewController.swift
+Author's name : Manoj Manikantan Muralidharan
+Student ID : 301067347
+Date : 7th Mar 2021
+App Description : Adjust the game to work in Landscape direction from right to left
+ */
+
+
+
 import UIKit
 import SpriteKit
 import GameplayKit
