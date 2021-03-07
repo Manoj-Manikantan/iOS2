@@ -7,7 +7,7 @@ class Plane: GameObject
     // constructor
     init()
     {
-        super.init(imageString: "plane", initialScale: 2.0)
+        super.init(imageString: "planeSide", initialScale: 4.0)
         Start()
     }
     
@@ -19,16 +19,16 @@ class Plane: GameObject
     
     override func CheckBounds()
     {
-        // constrain on the left - left boundary
-        if(position.x <= -310)
+        
+        if(position.y <= -310)
         {
-            position.x = -310
+            position.y = -310
         }
         
-        // constrain on the right - right boundary
-        if(position.x >= 310)
+        
+        if(position.y >= 310)
         {
-            position.x = 310
+            position.y = 310
         }
         
     }
