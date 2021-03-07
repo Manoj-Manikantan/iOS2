@@ -19,7 +19,7 @@ class Cloud: GameObject
     
     override func CheckBounds()
     {
-        if(position.y <= -756)
+        if(position.x <= -780)
         {
             Reset()
         }
@@ -27,14 +27,13 @@ class Cloud: GameObject
     
     override func Reset()
     {
-        dy = CGFloat((randomSource?.nextUniform())! * 5.0) + 5.0
-        dx = CGFloat((randomSource?.nextUniform())! * -4.0) + 2.0
+        dx = CGFloat((randomSource?.nextUniform())! * 5.0) + 5.0
+        dy = CGFloat((randomSource?.nextUniform())! * -4.0) + 2.0
         
-        // get a pseudo-random number from -262 to 262 =
-        let randomX:Int = (randomSource?.nextInt(upperBound: 524))! - 262
+        let randomX:Int = (randomSource?.nextInt(upperBound: 10))! + 780
         position.x = CGFloat(randomX)
         
-        let randomY:Int = (randomSource?.nextInt(upperBound: 10))! + 756
+        let randomY:Int = (randomSource?.nextInt(upperBound: 560))! - 280
         position.y = CGFloat(randomY)
         
         isColliding = false
