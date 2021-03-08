@@ -86,9 +86,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AFF145CA25F2F13E00C89A45 /* oceanSide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "oceanSide@2x.png"; path = "../../../../../../../../Downloads/ios/oceanSide@2x.png"; sourceTree = "<group>"; };
-		AFF145CB25F2F13E00C89A45 /* oceanSide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "oceanSide@3x.png"; path = "../../../../../../../../Downloads/ios/oceanSide@3x.png"; sourceTree = "<group>"; };
-		AFF145CC25F2F13E00C89A45 /* oceanSide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oceanSide.png; path = ../../../../../../../../Downloads/ios/oceanSide.png; sourceTree = "<group>"; };
+		AFF145CA25F2F13E00C89A45 /* oceanSide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oceanSide@2x.png"; sourceTree = "<group>"; };
+		AFF145CB25F2F13E00C89A45 /* oceanSide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oceanSide@3x.png"; sourceTree = "<group>"; };
+		AFF145CC25F2F13E00C89A45 /* oceanSide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oceanSide.png; sourceTree = "<group>"; };
 		E9728E0E25F03E2D000FED64 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		E9728E1125F04089000FED64 /* engine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = engine.mp3; sourceTree = "<group>"; };
 		E9728E1425F04096000FED64 /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thunder.mp3; sourceTree = "<group>"; };
