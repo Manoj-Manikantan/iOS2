@@ -37,7 +37,7 @@ class GameScene: SKScene
         plane?.position = CGPoint(x: -480, y: 0)
         addChild(plane!)
         
-        // add 3 clouds to the scene
+        // add 2 clouds to the scene
         for index in 0...1
         {
             let cloud: Cloud = Cloud()
